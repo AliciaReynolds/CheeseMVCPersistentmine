@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "New Menu";
+}
+@*not sure if this is how we bring the menu up with the menu id number*@
+@model List<CheeseMVC_persistent.Models.Menu>
+
+    <h1></h1>
+
+    <p><a asp-controller="Menu" asp-action="Add">Add Menu Items</a></p>
+
+    <ul>
+        @foreach (var menu in Model)
+        {
+        <li>
+            <a asp-controller="Menu"
+               asp-action="ViewMenu"
+               asp-route-id="@menu.MenuID">@menu.MenuName</a>
+        </li>
+            }
+    </ul>
+    
